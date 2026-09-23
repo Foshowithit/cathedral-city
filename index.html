@@ -1122,12 +1122,13 @@ quad('grass', 1500, 1500, 0, 0, 0, 0, -Math.PI / 2, 22);
 quad('water', 14, 300, -74, -1.1, 0, 0, -Math.PI / 2, 6);
 waterRects.push(rect(-81, -150, -67, 150));
 surf(-81, -150, -67, 150, -1.4);
-// banks: stone lips on both edges (gaps at bridges)
-for (const [a, b] of [[-140, -47.2], [-40.8, 140]])
+// banks: stone lips on both edges (gaps at BOTH bridges: z0 hero bridge + z-44)
+const lipSegs = [[-140, -47.2], [-40.8, -4.5], [4.5, 140]];
+for (const [a, b] of lipSegs)
   bxs('stoneD', -81.8, a, -80.6, b, -1.6, 1.6, 2);
-for (const [a, b] of [[-140, -47.2], [-40.8, 140]])
+for (const [a, b] of lipSegs)
   bxs('stoneD', -67.4, a, -66.2, b, -1.6, 1.6, 2);
-for (const [a, b] of [[-140, -47.2], [-40.8, 140]]){
+for (const [a, b] of lipSegs){
   solid(-81.8, a, -80.6, b, -2, 1.5);
   solid(-67.4, a, -66.2, b, -2, 1.5);
 }
